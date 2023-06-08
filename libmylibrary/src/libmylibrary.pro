@@ -7,7 +7,7 @@ CONFIG += c++17 shared
 
 DEFINES += QT_DEPRECATED_WARNINGS \
            QT_MESSAGELOGCONTEXT \
-           libmylibrary_LIBRARY
+           libmylibrary_BUILD
 		   
 #========== PRI Files ==========#
 include($$PWD/../include/include.pri)

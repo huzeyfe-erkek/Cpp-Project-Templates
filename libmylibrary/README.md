@@ -4,7 +4,7 @@ Template for libraries with QMake.
 
 ## New Project
 
-Please do followings for a new project:
+Followings should have been done by the script file.
 
 * Open bin/.gitignore and update libmylibrary
 * Rename include/libmylibrary_global.h

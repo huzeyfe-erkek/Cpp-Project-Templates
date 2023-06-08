@@ -1,6 +1,6 @@
 # C++ QMake Project Templates
 
-## libmylibrary
+## libmylibrasy
 
-Template for libraries
+Template for libraries. You can use libmylibrasy.sh for generating new projects
 

@@ -9,7 +9,7 @@
 #  define Q_DECL_IMPORT     __attribute__((visibility("default")))
 #endif
 
-#if defined(libmylibrary_LIBRARY)
+#if defined(libmylibrary_BUILD)
 #  define LIBMYLIBRARY_EXPORT Q_DECL_EXPORT
 #else
 #  define LIBMYLIBRARY_EXPORT Q_DECL_IMPORT
