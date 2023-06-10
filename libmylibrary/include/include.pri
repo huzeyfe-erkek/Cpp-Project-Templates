@@ -5,6 +5,7 @@ INCLUDEPATH += $$PWD/
 
 #========== Header files should be included only for building ==========#
 contains(DEFINES, libmylibrary_BUILD) {
-    HEADERS += libmylibrary_global.h
+HEADERS += \
+    $$PWD/libmylibrary_global.h
 
 }
