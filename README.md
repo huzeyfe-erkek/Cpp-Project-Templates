@@ -1,4 +1,4 @@
-# C++ QMake Project Templates
+# C++ Project Templates
 
 ## libmylibrary
 
