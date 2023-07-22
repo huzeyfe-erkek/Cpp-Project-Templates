@@ -4,11 +4,11 @@ Various templates for C++ projects.
 
 ## QMake
 
-### libmylibrary
+### [libmylibrary](QMake/libmylibrary)\
 
 Template for libraries. You can use libmylibrary.sh bash script for generating new projects. File hierarchy:
 
-libmylibrary\
+[libmylibrary](QMake/libmylibrary)\
  ├── bin\
  │   └── libmylibrary (Build output directory)\
  │   └── test (Test executables directory)\
@@ -29,11 +29,11 @@ libmylibrary\
 
  * libmylibrary.sh bash script can be used for generating a new project.
 
-### libmycudalibrary (Beta)
+### [libmycudalibrary](QMake/libmycudalibrary) (Beta)
 
 Template for libraries with CUDA. You can use libmycudalibrary.sh bash script for generating new projects. File hierarchy has same structure with libmylibrary. And, it has CUDA related modifications. 
 
-libmycudalibrary\
+[libmycudalibrary](QMake/libmycudalibrary)\
  ├\
  ... \
  ├── src\
