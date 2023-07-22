@@ -29,8 +29,8 @@ win32:CONFIG(debug, debug|release): cuda.commands += -Xcompiler "/wd4819,/EHsc,/
 win32:CONFIG(release, debug|release): cuda.commands += -Xcompiler "/wd4819,/EHsc,/W3,/nologo,/O2,/Zi,/MD"
 
 unix: cuda.commands += -Xcompiler -fPIC
-unix:CONFIG(debug, debug|release): cuda.depend_commands = $$CUDA_DIR/bin/nvcc -O0
-unix:CONFIG(release, debug|release): cuda.depend_commands = $$CUDA_DIR/bin/nvcc -O3
+unix:CONFIG(debug, debug|release): cuda.depend_commands = $$NVCC_PATH -O0
+unix:CONFIG(release, debug|release): cuda.depend_commands = $$NVCC_PATH -O3
 unix: cuda.depend_commands += -M $$CUDA_INCLUDEPATH $$NVCC_OPTIONS ${QMAKE_FILE_NAME}
 
 QMAKE_EXTRA_COMPILERS += cuda
