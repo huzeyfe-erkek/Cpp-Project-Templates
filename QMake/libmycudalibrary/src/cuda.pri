@@ -22,7 +22,7 @@ cuda.input = CUDA_SOURCES
 cuda.output = $$CUDA_OBJECTS_DIR/${QMAKE_FILE_BASE}_cuda.o
 cuda.dependency_type = TYPE_C
 
-cuda.commands = $$NVCC_PATH -m64 $$NVCC_OPTIONS $${CUDA_INCLUDEPATH} $$LIBS -c -o ${QMAKE_FILE_OUT} ${QMAKE_FILE_NAME} 
+cuda.commands = $$NVCC_PATH -m64 $$NVCC_OPTIONS $$CUDA_INCLUDEPATH $$LIBS -c -o ${QMAKE_FILE_OUT} ${QMAKE_FILE_NAME} 
 
 win32:CONFIG(debug, debug|release): cuda.commands += -Xcompiler "/wd4819,/EHsc,/W3,/nologo,/Od,/Zi,/RTC1,/MDd" -D_DEBUG  
 win32:CONFIG(release, debug|release): cuda.commands += -Xcompiler "/wd4819,/EHsc,/W3,/nologo,/O2,/Zi,/MD"
