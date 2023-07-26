@@ -1,2 +1,3 @@
 #========== Libraries ==========#
-CUDA_LIBS = cuda cudart # cufft freeglut glew32
+CUDA_LIBS = -lcuda -lcudart # -lcufft
+LIBS += CUDA_LIBS

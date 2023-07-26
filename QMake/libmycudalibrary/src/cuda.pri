@@ -9,10 +9,6 @@ OTHER_FILES += $$CUDA_SOURCES
 CUDA_INCLUDEPATH = $$join(INCLUDEPATH,'" -I"','-I"','"')
 
 QMAKE_LIBDIR += $$CUDA_PATH/lib/x64
-              
-for (lib, CUDA_LIBS) {
-    LIBS += -l$$lib
-}
 
 #========== Setup CUDA compiler ==========#
 win32: NVCC_PATH = \"$$CUDA_PATH/bin/nvcc.exe\"
@@ -22,7 +18,7 @@ cuda.input = CUDA_SOURCES
 cuda.output = $$CUDA_OBJECTS_DIR/${QMAKE_FILE_BASE}_cuda.o
 cuda.dependency_type = TYPE_C
 
-cuda.commands = $$NVCC_PATH -m64 $$NVCC_OPTIONS $$CUDA_INCLUDEPATH $$LIBS -c -o ${QMAKE_FILE_OUT} ${QMAKE_FILE_NAME} 
+cuda.commands = $$NVCC_PATH -m64 $$NVCC_OPTIONS $$CUDA_INCLUDEPATH $$CUDA_LIBS -c -o ${QMAKE_FILE_OUT} ${QMAKE_FILE_NAME} 
 
 win32:CONFIG(debug, debug|release): cuda.commands += -Xcompiler "/wd4819,/EHsc,/W3,/nologo,/Od,/Zi,/RTC1,/MDd" -D_DEBUG  
 win32:CONFIG(release, debug|release): cuda.commands += -Xcompiler "/wd4819,/EHsc,/W3,/nologo,/O2,/Zi,/MD"
