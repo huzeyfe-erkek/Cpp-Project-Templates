@@ -31,7 +31,7 @@ libmycudalibrary
 
  * libmylibrary.sh bash script can be used for generating a new project.
 
-### [libmycudalibrary](QMake/libmycudalibrary) (Beta)
+### [libmycudalibrary](QMake/libmycudalibrary)
 
 Template for libraries with CUDA. It has the same structure as libmylibrary, only CUDA related modifications exist.
 

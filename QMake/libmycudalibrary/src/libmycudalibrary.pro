@@ -1,6 +1,4 @@
 #========== Configs ==========#
-QT += core widgets
-
 TEMPLATE = lib
 
 CONFIG += c++17 shared
