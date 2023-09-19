@@ -17,13 +17,13 @@ libmycudalibrary
  │   └── build_info.pri                   (Determining system architecture: x64 relese, x86 debug, ...)
  │   └── platform_info.pri                (Determining platform variables: unix, MSVC2015, MSVC2017, MSVC201, MSVC2022)
  ├── include
- │   └── include.pri                      (Include paths & Header files)
- │   └── lib.pri                          (Linked libraries)
+ │   └── include.pri                      (Include paths and header files)
+ │   └── lib.pri                          (Libraries)
  ├── src
- │   └── libmylibrary-ALL.pro             (Qt SUBDIR project file includes project &test project)
+ │   └── libmylibrary-ALL.pro             (Qt SUBDIR project file includes project & Google test project)
  │   └── libmylibrary.pro                 (Base project)
  │   └── src.pri                          (Includes source and form files)
- ├── test                                 (Google Test project)
+ ├── test                                 (Google test project)
  │   └── gtest_dependency.pri             (Configures Google Test Suite)
  │   └── libmylibrary-test.pro            (Test project, includes test source files)
  └── libmylibrary.pri                     (The library can be linked from another project by including this)
