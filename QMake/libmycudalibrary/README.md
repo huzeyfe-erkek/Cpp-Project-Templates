@@ -34,7 +34,7 @@ Followings should have been done by the script file.
 
 Qt 5.14.2 is used.
 
-* Open src/libmycudalibrary.pro
+* Open src/libmycudalibrary-ALL.pro
 * Shadow build MUST be set '../bin/libmycudalibrary'
 * Build all
 

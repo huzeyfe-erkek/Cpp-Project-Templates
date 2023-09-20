@@ -32,7 +32,7 @@ Followings should have been done by the script file.
 
 Qt 5.14.2 is used.
 
-* Open src/libmylibrary.pro
+* Open src/libmylibrary-ALL.pro
 * Shadow build MUST be set '../bin/libmylibrary'
 * Build all
 
