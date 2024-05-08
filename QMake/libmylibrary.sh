@@ -2,7 +2,7 @@
 # 2023.06.08
 # Huzeyfe Erkek, huzeyfe.erkek@outlook.com
 
-echo "Welcome! Last updated: 2023.06.08"
+echo "Welcome! Last updated: 2024.05.08"
 echo
 keyString="libmylibrary"
 

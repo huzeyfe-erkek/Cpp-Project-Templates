@@ -1,5 +1,6 @@
 #========== Settings ==========#
-CUDA_ARCH = sm_52 # Type of CUDA architecture
+win32: CUDA_ARCH = sm_52 # Type of CUDA architecture
+else:unix: CUDA_ARCH = sm_52 # Type of CUDA architecture
 CUDA_OBJECTS_DIR = $$OUTDIR/cuda
 NVCC_OPTIONS = -Dlibmycudalibrary_BUILD --std=c++17 -arch=$$CUDA_ARCH --use_fast_math 
 

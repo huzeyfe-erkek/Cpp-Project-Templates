@@ -2,5 +2,5 @@ TEMPLATE = subdirs
 
 CONFIG += ordered
 
-SUBDIRS = libmycudalibrary.pro \
+SUBDIRS = $$PWD/libmycudalibrary.pro \
           $$PWD/../test/libmycudalibrary-test.pro

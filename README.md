@@ -14,8 +14,7 @@ libmycudalibrary
  │   └── libmylibrary                     (Build output directory)
  │   └── test                             (Test executables directory)
  │   └── bin.pri                          (Configuring build outputs)
- │   └── build_info.pri                   (Determining system architecture: x64 relese, x86 debug, ...)
- │   └── platform_info.pri                (Determining platform variables: unix, MSVC2015, MSVC2017, MSVC201, MSVC2022)
+ │   └── configuration.pri                (Get architecture (x64 release, x86 debug) and platform (unix, MSVC2017, MSVC2019, ...))
  ├── include
  │   └── include.pri                      (Include paths and header files)
  │   └── lib.pri                          (Libraries)
