@@ -31,6 +31,7 @@ tmp=$dstFullPath/${libraryName}.pro
 sed -i -e "s/${keyString}_BUILD/${libraryName}_BUILD/g" $tmp # Library build definition
 sed -i -e "s/${keyString}.pri/${libraryName}.pri/g" $tmp # Library pri
 sed -i -e "s/${keyString^^}_VERSION_/${libraryName^^}_VERSION_/g" $tmp # Version information
+sed -i -e "s/${keyString^^}_BUILD_PATH/${libraryName^^}_BUILD_PATH/g" $tmp # Update library build path 
 
 # (5) Rename ${libraryName}-ALL.pro
 mv $dstFullPath/${keyString}-ALL.pro $dstFullPath/${libraryName}-ALL.pro
@@ -47,8 +48,10 @@ sed -i -e "s/${keyString}/${libraryName}/g" $dstFullPath/test/${libraryName}-tes
 # (9) Rename ${libraryName}.pri
 mv $dstFullPath/${keyString}.pri $dstFullPath/${libraryName}.pri
 
-# (10) Open ${libraryName}.pri and update LIB_NAME
-sed -i -e "s/${keyString}/${libraryName}/g" $dstFullPath/${libraryName}.pri
+# (10) Open ${libraryName}.pri and update library name and library build path
+tmp=$dstFullPath/${libraryName}.pri
+sed -i -e "s/${keyString}/${libraryName}/g" $tmp
+sed -i -e "s/${keyString^^}_BUILD_PATH/${libraryName^^}_BUILD_PATH/g" $tmp # Update library build path 
 
 # (13) Update README.md
 sed -i -e "s/${keyString}/${libraryName}/g" $dstFullPath/README.md

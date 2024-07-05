@@ -9,18 +9,15 @@ Followings should have been done by the script file.
 * (1) Rename include/libmycudalibrary_global.h
 * (2) Open include/libmycudalibrary_global.h and update LIBMYCUDALIBRARY_GLOBAL_H (header guard), libmycudalibrary_LIBRARY (C++ lib build keyword) and LIBMYCUDALIBRARY_EXPORT (Export keyword).
 * (3) Rename libmycudalibrary.pro
-* (4) Open libmycudalibrary.pro, update libmycudalibrary_LIBRARY and update LIBMYCUDALIBRARY_*
+* (4) Open libmycudalibrary.pro; update libmycudalibrary_LIBRARY, LIBMYCUDALIBRARY_BUILD_PATH and LIBMYCUDALIBRARY_*
 * (5) Rename libmycudalibrary-All.pro
 * (6) Open libmycudalibrary-All.pro and update *.pro files
 * (7) Rename test/libmessaging-test.pro
 * (8) Open test/libmessaging-test.pro and update include(...) commands
 * (9) Rename libmycudalibrary.pri
-* (10) Open libmycudalibrary.pri and update LIB_NAME
+* (10) Open libmycudalibrary.pri; and update library name and LIBMYCUDALIBRARY_BUILD_PATH
 * (11) Update README.md
-
-TODO
-* (12) Open src/cuda.pri and update libmycudalibrary_BUILD
-
+* (12) Open cuda.pri and update libmycudalibrary_BUILD
 
 ## Adding files to project
 

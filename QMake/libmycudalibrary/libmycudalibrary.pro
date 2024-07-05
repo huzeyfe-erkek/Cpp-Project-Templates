@@ -18,12 +18,12 @@ DEFINES += LIBMYCUDALIBRARY_VERSION_PATCH=0
 include($$PWD/libmycudalibrary.pri)
 include($$PWD/cuda.pri)
 
-#========== Output directories (DO NOT CHANGE ORDER USES LIB_PATH) ==========#
-DESTDIR     = $$LIB_PATH
-UI_DIR      = $$LIB_PATH/.ui
-MOC_DIR     = $$LIB_PATH/.moc
-RCC_DIR     = $$LIB_PATH/.rcc
-OBJECTS_DIR = $$LIB_PATH/.obj
+#========== Output directories (DO NOT CHANGE ORDER USES, IT USES LIB_PATH) ==========#
+DESTDIR     = $$LIBMYCUDALIBRARY_BUILD_PATH
+UI_DIR      = $$LIBMYCUDALIBRARY_BUILD_PATH/.ui
+MOC_DIR     = $$LIBMYCUDALIBRARY_BUILD_PATH/.moc
+RCC_DIR     = $$LIBMYCUDALIBRARY_BUILD_PATH/.rcc
+OBJECTS_DIR = $$LIBMYCUDALIBRARY_BUILD_PATH/.obj
 
 #========== Add source files ==========#
 FORMS += $$files($$PWD/src/*.ui, true)

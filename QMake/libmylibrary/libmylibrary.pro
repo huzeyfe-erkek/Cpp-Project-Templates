@@ -17,12 +17,12 @@ DEFINES += LIBMYLIBRARY_VERSION_PATCH=0
 #========== PRI Files (DO NOT CHANGE ORDER) ==========#
 include($$PWD/libmylibrary.pri)
 
-#========== Output directories (DO NOT CHANGE ORDER USES LIB_PATH) ==========#
-DESTDIR     = $$LIB_PATH
-UI_DIR      = $$LIB_PATH/.ui
-MOC_DIR     = $$LIB_PATH/.moc
-RCC_DIR     = $$LIB_PATH/.rcc
-OBJECTS_DIR = $$LIB_PATH/.obj
+#========== Output directories (DO NOT CHANGE ORDER, IT USES LIBMYLIBRARY_BUILD_PATH) ==========#
+DESTDIR     = $$LIBMYLIBRARY_BUILD_PATH
+UI_DIR      = $$LIBMYLIBRARY_BUILD_PATH/.ui
+MOC_DIR     = $$LIBMYLIBRARY_BUILD_PATH/.moc
+RCC_DIR     = $$LIBMYLIBRARY_BUILD_PATH/.rcc
+OBJECTS_DIR = $$LIBMYLIBRARY_BUILD_PATH/.obj
 
 #========== Add source files ==========#
 FORMS += $$files($$PWD/src/*.ui, true)
