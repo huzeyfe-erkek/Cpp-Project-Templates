@@ -1,11 +1,14 @@
-#========== Add lib ==========#
-LIB_NAME = libmylibrary
+#========== Qt Libraries and include directories ==========#
+QT += core widgets
+INCLUDEPATH += $$PWD/include
 
-include(bin/configuration.pri)
-LIB_PATH = $$PWD/bin/$${LIB_NAME}/$${PLATFORM}/$${BUILD_CONFIG}/$${CUR_ARCH}
-win32|unix: LIBS += -L$${LIB_PATH} -l$${LIB_NAME}
+#========== Get build configuration and library path (ATTENTION: It DOES NOT use shadow build path for binaries)==========#
+include(configuration.pri)
+LIB_PATH = $$PWD/build/$${PLATFORM}/$${BUILD_CONFIG}/$${CUR_ARCH}
 DEPENDPATH += $${LIB_PATH}
 
-#========== Include dir and files ==========#
-include(include/include.pri)
-include(include/lib.pri)
+#========== Add lib ==========#
+!contains(DEFINES, libmylibrary_BUILD) {
+    LIB_NAME = libmylibrary
+    win32|unix: LIBS += -L$${LIB_PATH} -l$${LIB_NAME}
+}
