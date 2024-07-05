@@ -9,23 +9,21 @@ Various templates for C++ projects. Bash scripts can be used for generating new 
 Template for libraries. File hierarchy:
 
 <pre>
-libmycudalibrary
- ├── bin
- │   └── libmylibrary                     (Build output directory)
- │   └── test                             (Test executables directory)
- │   └── bin.pri                          (Configuring build outputs)
- │   └── configuration.pri                (Get architecture (x64 release, x86 debug) and platform (unix, MSVC2017, MSVC2019, ...))
- ├── include
- │   └── include.pri                      (Include paths and header files)
- │   └── lib.pri                          (Libraries)
- ├── src
- │   └── libmylibrary-ALL.pro             (Qt SUBDIR project file includes project & Google test project)
- │   └── libmylibrary.pro                 (Base project)
- │   └── src.pri                          (Includes source and form files)
+libmylibrary
+ ├── build                                (Build output directory. Binaries are always created in this directory)
+ ├── include                              ("*.h" files are automatically read from this directory) 
+ │   └── libtest1_global.h
+ ├── src                                  ("*.cpp" and "*.ui" files are automatically read from this directory) 
  ├── test                                 (Google test project)
  │   └── gtest_dependency.pri             (Configures Google Test Suite)
  │   └── libmylibrary-test.pro            (Test project, includes test source files)
- └── libmylibrary.pri                     (The library can be linked from another project by including this)
+ ├── CHANGELOG.md                         (Release notes)
+ ├── configuration.pri                    (Get architecture (x64 release, x86 debug) and platform (unix, MSVC2017, MSVC2019, ...))
+ ├── ISSUES.md                            (Known issues of the releases)
+ ├── libmylibrary.pri                     (The library can be linked from another project by including this)
+ ├── libmylibrary.pro                     (Base project)
+ ├── libmylibrary-ALL.pro                 (Qt SUBDIR project file includes project & Google test project)
+ └── README.md
 </pre>
 
  * libmylibrary.sh bash script can be used for generating a new project.
