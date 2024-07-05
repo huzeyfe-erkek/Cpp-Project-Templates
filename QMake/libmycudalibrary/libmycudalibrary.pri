@@ -19,5 +19,5 @@ DEPENDPATH += $${LIBMYCUDALIBRARY_BUILD_PATH}
 #========== Libraries ==========#
 !contains(DEFINES, libmycudalibrary_BUILD) {
     LIB_NAME = libmycudalibrary
-    win32|unix: LIBS += -L$${LIB_PATH} -l$${LIB_NAME}
+    win32|unix: LIBS += -L$${LIBMYCUDALIBRARY_BUILD_PATH} -l$${LIB_NAME}
 }

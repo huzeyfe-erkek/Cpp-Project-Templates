@@ -10,5 +10,5 @@ DEPENDPATH += $${LIBMYLIBRARY_BUILD_PATH}
 #========== Libraries ==========#
 !contains(DEFINES, libmylibrary_BUILD) {
     LIB_NAME = libmylibrary
-    win32|unix: LIBS += -L$${LIB_PATH} -l$${LIB_NAME}
+    win32|unix: LIBS += -L$${LIBMYLIBRARY_BUILD_PATH} -l$${LIB_NAME}
 }

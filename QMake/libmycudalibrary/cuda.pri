@@ -7,6 +7,7 @@ CUDA_OBJECTS_DIR = $$OUTDIR/cuda
 NVCC_OPTIONS = -Dlibmycudalibrary_BUILD --std=c++11 -arch=$$CUDA_ARCH --use_fast_math 
 
 #========== Include paths & Libs ==========#
+CUDA_SOURCES += $$files($$PWD/src/*.cu, true)
 OTHER_FILES += $$CUDA_SOURCES
 
 CUDA_INCLUDEPATH = $$join(INCLUDEPATH,'" -I"','-I"','"')

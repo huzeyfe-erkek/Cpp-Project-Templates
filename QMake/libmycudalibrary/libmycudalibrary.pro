@@ -29,4 +29,3 @@ OBJECTS_DIR = $$LIBMYCUDALIBRARY_BUILD_PATH/.obj
 FORMS += $$files($$PWD/src/*.ui, true)
 HEADERS += $$files($$PWD/include/*.h, true)
 SOURCES += $$files($$PWD/src/*.cpp, true)
-CUDA_SOURCES += $$files($$PWD/src/*.cu, true)
