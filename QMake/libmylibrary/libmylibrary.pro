@@ -7,8 +7,12 @@ DEFINES += QT_DEPRECATED_WARNINGS \
            QT_MESSAGELOGCONTEXT \
            no_plugin_name_prefix \
            libmylibrary_BUILD
-		   
-VERSION = 1.0.0.0
+
+#========== Version ==========#
+VERSION = 1.0.0.0 # major.minor.patch.build
+DEFINES += LIBMYLIBRARY_VERSION_MAJOR=1
+DEFINES += LIBMYLIBRARY_VERSION_MINOR=0
+DEFINES += LIBMYLIBRARY_VERSION_PATCH=0
 
 #========== PRI Files (DO NOT CHANGE ORDER) ==========#
 include($$PWD/libmylibrary.pri)

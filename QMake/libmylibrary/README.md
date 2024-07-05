@@ -9,7 +9,7 @@ Followings should have been done by the script file.
 * (1) Rename include/libmylibrary_global.h
 * (2) Open include/libmylibrary_global.h and update LIBMYLIBRARY_GLOBAL_H (header guard), libmylibrary_LIBRARY (C++ lib build keyword) and LIBMYLIBRARY_EXPORT (Export keyword).
 * (3) Rename libmylibrary.pro
-* (4) Open libmylibrary.pro and update libmylibrary_LIBRARY
+* (4) Open libmylibrary.pro, update libmylibrary_LIBRARY and update LIBMYLIBRARY_*
 * (5) Rename libmylibrary-All.pro
 * (6) Open libmylibrary-All.pro and update *.pro files
 * (7) Rename test/libmessaging-test.pro

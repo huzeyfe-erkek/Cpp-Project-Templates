@@ -30,6 +30,7 @@ mv $dstFullPath/${keyString}.pro $dstFullPath/${libraryName}.pro
 tmp=$dstFullPath/${libraryName}.pro
 sed -i -e "s/${keyString}_BUILD/${libraryName}_BUILD/g" $tmp # Library build definition
 sed -i -e "s/${keyString}.pri/${libraryName}.pri/g" $tmp # Library pri
+sed -i -e "s/${keyString^^}_VERSION_/${libraryName^^}_VERSION_/g" $tmp # Version information
 
 # (5) Rename ${libraryName}-ALL.pro
 mv $dstFullPath/${keyString}-ALL.pro $dstFullPath/${libraryName}-ALL.pro
