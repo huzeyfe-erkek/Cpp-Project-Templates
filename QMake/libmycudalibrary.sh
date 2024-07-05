@@ -2,7 +2,7 @@
 # 2023.07.22
 # Huzeyfe Erkek, huzeyfe.erkek@outlook.com
 
-echo "Welcome! Last updated: 2024.05.08"
+echo "Welcome! Last updated: 2024.07.05"
 echo
 keyString="libmycudalibrary"
 
@@ -14,51 +14,45 @@ dstFullPath=$dstFolder/$libraryName
 # Copy source folder and contents
 cp -a $keyString $dstFullPath
 
-# (1) Open bin/.gitignore and update replace library name
-tmp=$dstFullPath/bin/.gitignore
-sed -i -e "s/${keyString}/${libraryName}/g" $tmp
+# (1) Rename global header file in include directory
+mv $dstFullPath/include/${keyString}_global.h $dstFullPath/include/${libraryName}_global.h 
 
-# (2) Rename global header file in include directory
-mv $dstFullPath/include/${keyString}_global.h $dstFullPath/include/${libraryName}_global.h
-
-# (3) Open include/libmycudalibrary_global.h and update header guard, library build definition and export definition
+# (2) Open include/libmycudalibrary_global.h and update header guard, library build definition and export definition.
 tmp=$dstFullPath/include/${libraryName}_global.h
 sed -i -e "s/${keyString^^}_GLOBAL_H/${libraryName^^}_GLOBAL_H/g" $tmp # Header guard
 sed -i -e "s/${keyString}_BUILD/${libraryName}_BUILD/g" $tmp # Library build definition
 sed -i -e "s/${keyString^^}_EXPORT/${libraryName^^}_EXPORT/g" $tmp # Export definition
 
-# (4) Open include/include.pri and update library build definition and global header file
-sed -i -e "s/${keyString}_BUILD/${libraryName}_BUILD/g" $dstFullPath/include/include.pri
-sed -i -e "s/${keyString}_global.h/${libraryName}_global.h/g" $dstFullPath/include/include.pri
+# (3) Rename ${libraryName}.pro
+mv $dstFullPath/${keyString}.pro $dstFullPath/${libraryName}.pro
 
-# (5) Rename src/${libraryName}.pro
-mv $dstFullPath/src/${keyString}.pro $dstFullPath/src/${libraryName}.pro
+# (4) Open ${libraryName}.pro, update ${libraryName}_BUILD and ${libraryName}.pri
+tmp=$dstFullPath/${libraryName}.pro
+sed -i -e "s/${keyString}_BUILD/${libraryName}_BUILD/g" $tmp # Library build definition
+sed -i -e "s/${keyString}.pri/${libraryName}.pri/g" $tmp # Library pri
+sed -i -e "s/${keyString^^}_VERSION_/${libraryName^^}_VERSION_/g" $tmp # Version information
 
-# (6) Open src/${libraryName}.pro and update ${libraryName}_BUILD
-sed -i -e "s/${keyString}_BUILD/${libraryName}_BUILD/g" $dstFullPath/src/${libraryName}.pro
+# (5) Rename ${libraryName}-ALL.pro
+mv $dstFullPath/${keyString}-ALL.pro $dstFullPath/${libraryName}-ALL.pro
 
-# (7) Rename src/${libraryName}-ALL.pro
-mv $dstFullPath/src/${keyString}-ALL.pro $dstFullPath/src/${libraryName}-ALL.pro
+# (6) Open ${libraryName}-All.pro and update *.pro files
+sed -i -e "s/${keyString}/${libraryName}/g" $dstFullPath/${libraryName}-ALL.pro
 
-# (8) Open src/${libraryName}-All.pro and update *.pro files
-sed -i -e "s/${keyString}/${libraryName}/g" $dstFullPath/src/${libraryName}-ALL.pro
-
-# (9) Rename test/${libraryName}-test.pro
+# (7) Rename test/${libraryName}-test.pro
 mv $dstFullPath/test/${keyString}-test.pro $dstFullPath/test/${libraryName}-test.pro
 
-# (10) Open test/${libraryName}-test.pro and update include(...) commands
+# (8) Open test/${libraryName}-test.pro and update include(...) commands
 sed -i -e "s/${keyString}/${libraryName}/g" $dstFullPath/test/${libraryName}-test.pro
 
-# (11) Rename ${libraryName}.pri
+# (9) Rename ${libraryName}.pri
 mv $dstFullPath/${keyString}.pri $dstFullPath/${libraryName}.pri
 
-# (12) Open ${libraryName}.pri and update LIB_NAME
+# (10) Open ${libraryName}.pri and update LIB_NAME
 sed -i -e "s/${keyString}/${libraryName}/g" $dstFullPath/${libraryName}.pri
 
 # (13) Update README.md
 sed -i -e "s/${keyString}/${libraryName}/g" $dstFullPath/README.md
 sed -i -e "s/${keyString^^}/${libraryName^^}/g" $dstFullPath/README.md
 
-# (14) Open src/cuda.pri and update libmycudalibrary_BUILD
-sed -i -e "s/${keyString}_BUILD/${libraryName}_BUILD/g" $dstFullPath/src/cuda.pri
-
+# (14) Open cuda.pri and update libmycudalibrary_BUILD
+sed -i -e "s/${keyString}_BUILD/${libraryName}_BUILD/g" $dstFullPath/cuda.pri

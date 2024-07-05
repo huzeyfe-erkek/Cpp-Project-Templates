@@ -1,2 +1,0 @@
-#========== Libraries ==========#
-QT += core widgets
