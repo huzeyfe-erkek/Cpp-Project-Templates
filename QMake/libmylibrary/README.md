@@ -8,14 +8,14 @@ Followings should have been done by the script file.
 
 * (1) Rename include/libmylibrary_global.h
 * (2) Open include/libmylibrary_global.h and update LIBMYLIBRARY_GLOBAL_H (header guard), libmylibrary_LIBRARY (C++ lib build keyword) and LIBMYLIBRARY_EXPORT (Export keyword).
-* (3) Rename libmylibrary.pro
-* (4) Open libmylibrary.pro; update libmylibrary_LIBRARY, LIBMYLIBRARY_BUILD_PATH and LIBMYLIBRARY_*
-* (5) Rename libmylibrary-All.pro
-* (6) Open libmylibrary-All.pro and update *.pro files
-* (7) Rename test/libmessaging-test.pro
-* (8) Open test/libmessaging-test.pro and update include(...) commands
+* (3) Rename libmylibrary-src.pro
+* (4) Open libmylibrary-src.pro; update libmylibrary_BUILD, target name, build version, pri path and LIBMYLIBRARY_BUILD_PATH
+* (5) Rename libmylibrary.pro
+* (6) Open libmylibrary.pro and update *.pro files
+* (7) Rename libmylibrary-test.pro
+* (8) Open libmylibrary-test.pro and update include(...) commands
 * (9) Rename libmylibrary.pri
-* (10) Open libmycudalibrary.pri; and update library name and LIBMYCUDALIBRARY_BUILD_PATH
+* (10) Open libmylibrary.pri; and update library name and LIBMYLIBRARY_BUILD_PATH
 * (11) Update README.md
 
 ## Adding files to project
@@ -46,4 +46,3 @@ Binaries are ALWAYS created in "build" folder. No matter what the shadow directo
 * Library can be linked by adding following line into the *.pro or *.pri file:
 	include(libmylibrary.pri)
 * The project can also be added in a Qt SUBDIR template.
-	
