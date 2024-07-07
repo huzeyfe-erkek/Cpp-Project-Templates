@@ -28,7 +28,7 @@ Followings should have been done by the script file.
 
 # Dependencies
 
-* Write 
+* TODO 
 
 # Build
 
