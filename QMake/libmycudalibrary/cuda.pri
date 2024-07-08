@@ -3,7 +3,7 @@
 win32: CUDA_ARCH = sm_30
 else:unix: CUDA_ARCH = sm_35
 
-CUDA_OBJECTS_DIR = $$OUTDIR/cuda
+CUDA_OBJECTS_DIR = $$LIBMYCUDALIBRARY_BUILD_PATH/cuda
 NVCC_OPTIONS = -Dlibmycudalibrary_BUILD --std=c++11 -arch=$$CUDA_ARCH --use_fast_math 
 
 #========== Include paths & Libs ==========#
