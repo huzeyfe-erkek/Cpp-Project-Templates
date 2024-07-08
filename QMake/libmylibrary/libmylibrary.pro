@@ -2,5 +2,5 @@ TEMPLATE = subdirs
 
 CONFIG += ordered
 
-SUBDIRS = libmylibrary.pro \
+SUBDIRS = libmylibrary-src.pro \
           libmylibrary-test.pro
