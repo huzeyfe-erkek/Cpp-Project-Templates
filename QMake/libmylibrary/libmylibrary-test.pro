@@ -1,6 +1,9 @@
 #========== Configs ==========#
 TEMPLATE = app
+
 CONFIG += console c++17 thread
+
+INCLUDEPATH += $$PWD/test
 
 #========== PRI Files (DO NOT CHANGE ORDER) ==========#
 include($$PWD/gtest_dependency.pri)
