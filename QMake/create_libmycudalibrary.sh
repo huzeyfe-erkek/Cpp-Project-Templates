@@ -15,4 +15,6 @@ dstFullPath=$dstFolder/$libraryName
 fn_libmylibrary "libmycudalibrary" $libraryName $dstFullPath
 
 # (12) Open cuda.pri and update libmycudalibrary_BUILD
-sed -i -e "s/${keyString}_BUILD/${libraryName}_BUILD/g" $dstFullPath/cuda.pri
+tmp=$dstFullPath/cuda.pri
+sed -i -e "s/${keyString}_BUILD/${libraryName}_BUILD/g" $tmp
+sed -i -e "s/${keyString^^}_BUILD_PATH/${libraryName^^}_BUILD_PATH/g" $tmp # Update library build path
